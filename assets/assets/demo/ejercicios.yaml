@@ -1,0 +1,289 @@
+# Catálogo de ejercicios — formato 1
+#
+# Lo mantenéis vosotros. Claude lo recibe entero en el paquete de contexto y
+# solo puede usar estos `id` en los planes; un ejercicio que no esté aquí va en
+# `ejercicios_nuevos` del plan (ver plan-fuerza.md).
+#
+# Campos:
+#   id           único, kebab-case, NUNCA cambia (el diario lo referencia)
+#   patron       sentadilla | bisagra | zancada | empuje-horizontal | empuje-vertical |
+#                tiron-horizontal | tiron-vertical | core | cardio | movilidad
+#                (el monitor busca sustitutos por patrón)
+#   registro     peso | peso-corporal | tiempo | distancia
+#                (decide qué pide la app al registrar cada serie)
+#   principal    true = sale en la gráfica de fuerza (1RM estimado)
+#   video        null hasta que elijáis uno; la app ofrece "Buscar en YouTube"
+#   alternativas ids de este catálogo, de más a menos parecido
+
+formato: 1
+ejercicios:
+
+  - id: sentadilla-goblet
+    nombre: Sentadilla goblet
+    alias: [goblet squat]
+    patron: sentadilla
+    musculos: [cuadriceps, gluteos, core]
+    material: [kettlebell, mancuerna]
+    registro: peso
+    unilateral: false
+    nivel: principiante
+    principal: true
+    video: null                     # { url: "https://www.youtube.com/watch?v=...", inicio_s: 0 }
+    claves:
+      - Pecho alto y peso pegado al pecho
+      - Rodillas en la línea de los pies
+      - Bajar al menos hasta paralelo
+    alternativas: [zancada-atras-mancuernas]
+
+  - id: peso-muerto-rumano-mancuernas
+    nombre: Peso muerto rumano con mancuernas
+    alias: [RDL]
+    patron: bisagra
+    musculos: [isquios, gluteos, lumbares]
+    material: [mancuernas]
+    registro: peso
+    unilateral: false
+    nivel: principiante
+    principal: true
+    video: null
+    claves:
+      - Rodillas casi fijas, la cadera va atrás
+      - Espalda neutra, mancuernas rozando las piernas
+    alternativas: []
+
+  - id: zancada-atras-mancuernas
+    nombre: Zancada atrás con mancuernas
+    alias: [reverse lunge]
+    patron: zancada
+    musculos: [cuadriceps, gluteos]
+    material: [mancuernas]
+    registro: peso
+    unilateral: true                # la app registra las repeticiones por lado
+    nivel: principiante
+    principal: false
+    video: null
+    claves:
+      - Paso largo atrás, rodilla de atrás casi al suelo
+    alternativas: [sentadilla-goblet]
+
+  - id: press-banca-mancuernas
+    nombre: Press de banca con mancuernas
+    alias: [dumbbell bench press]
+    patron: empuje-horizontal
+    musculos: [pecho, triceps, hombro-anterior]
+    material: [mancuernas, banco]
+    registro: peso
+    unilateral: false
+    nivel: principiante
+    principal: true
+    video: null
+    claves:
+      - Escápulas juntas y pies firmes
+      - Codos a unos 45° del cuerpo
+    alternativas: [flexiones]
+
+  - id: flexiones
+    nombre: Flexiones
+    alias: [push-ups]
+    patron: empuje-horizontal
+    musculos: [pecho, triceps, core]
+    material: []
+    registro: peso-corporal
+    unilateral: false
+    nivel: principiante
+    principal: false
+    video: null
+    claves:
+      - Cuerpo en bloque, sin hundir la cadera
+    alternativas: [press-banca-mancuernas]
+
+  - id: remo-mancuerna
+    nombre: Remo con mancuerna a una mano
+    alias: [one-arm dumbbell row]
+    patron: tiron-horizontal
+    musculos: [dorsal, romboides, biceps]
+    material: [mancuerna, banco]
+    registro: peso
+    unilateral: true
+    nivel: principiante
+    principal: true
+    video: null
+    claves:
+      - Tirar con el codo hacia la cadera
+      - Sin girar el tronco
+    alternativas: []
+
+  - id: dominadas
+    nombre: Dominadas
+    alias: [pull-ups]
+    patron: tiron-vertical
+    musculos: [dorsal, biceps]
+    material: [barra-dominadas]
+    registro: peso-corporal         # con lastre: se anota en carga_kg de la serie
+    unilateral: false
+    nivel: intermedio
+    principal: true                 # 1RM estimado con peso corporal + lastre
+    video: null
+    claves:
+      - Empezar colgado con brazos estirados
+      - Barbilla por encima de la barra
+    alternativas: []
+
+  - id: plancha
+    nombre: Plancha frontal
+    alias: [plank]
+    patron: core
+    musculos: [core]
+    material: []
+    registro: tiempo
+    unilateral: false
+    nivel: principiante
+    principal: false
+    video: null
+    claves:
+      - Glúteos apretados, sin arquear la espalda
+    alternativas: []
+
+  - id: press-landmine              # añadido desde el plan fuerza-marga-2026-11-16
+    nombre: Press landmine
+    alias: [landmine press]
+    patron: empuje-vertical
+    musculos: [hombro-anterior, pecho, triceps]
+    material: [barra, landmine]
+    registro: peso
+    unilateral: false
+    nivel: principiante
+    principal: false
+    video: null
+    claves: []
+    alternativas: []
+
+  # --- Máquinas de casa (añadidas el 2026-11-23) ---
+
+  - id: press-banca-barra
+    nombre: Press de banca con barra
+    alias: [bench press]
+    patron: empuje-horizontal
+    musculos: [pecho, triceps, hombro-anterior]
+    material: [press-banca]
+    registro: peso
+    unilateral: false
+    nivel: principiante
+    principal: true
+    video: null
+    claves:
+      - Escápulas juntas y hacia abajo, pies firmes en el suelo
+      - La barra baja a la altura del esternón, codos a unos 45°
+      - Usar los topes de seguridad
+    alternativas: [press-banca-mancuernas, press-pecho-maquina, flexiones]
+
+  - id: jalon-al-pecho
+    nombre: Jalón al pecho en polea
+    alias: [lat pulldown]
+    patron: tiron-vertical
+    musculos: [dorsal, biceps]
+    material: [multifuncion]
+    registro: peso
+    unilateral: false
+    nivel: principiante
+    principal: true
+    video: null
+    claves:
+      - Pecho alto, tirar con los codos hacia abajo
+      - La barra llega a la parte alta del pecho, sin balancearse
+    alternativas: [dominadas]
+
+  - id: remo-polea-sentado
+    nombre: Remo sentado en polea baja
+    alias: [seated cable row]
+    patron: tiron-horizontal
+    musculos: [dorsal, romboides, biceps]
+    material: [multifuncion]
+    registro: peso
+    unilateral: false
+    nivel: principiante
+    principal: false
+    video: null
+    claves:
+      - Espalda recta, sin echarse atrás
+      - Juntar las escápulas al final del tirón
+    alternativas: [remo-mancuerna]
+
+  - id: press-pecho-maquina
+    nombre: Press de pecho en máquina
+    alias: [chest press]
+    patron: empuje-horizontal
+    musculos: [pecho, triceps]
+    material: [multifuncion]
+    registro: peso
+    unilateral: false
+    nivel: principiante
+    principal: false
+    video: null
+    claves:
+      - Asiento con las asas a la altura del pecho
+      - Empujar sin bloquear los codos
+    alternativas: [press-banca-mancuernas, press-banca-barra]
+
+  - id: extension-cuadriceps
+    nombre: Extensión de cuádriceps en máquina
+    alias: [leg extension]
+    patron: sentadilla
+    musculos: [cuadriceps]
+    material: [multifuncion]
+    registro: peso
+    unilateral: false
+    nivel: principiante
+    principal: false
+    video: null
+    claves:
+      - Subir controlado y aguantar un segundo arriba
+      - Bajar despacio, sin dejar caer el peso
+    alternativas: [sentadilla-goblet]
+
+  - id: curl-femoral-maquina
+    nombre: Curl femoral en máquina
+    alias: [leg curl]
+    patron: bisagra
+    musculos: [isquios]
+    material: [multifuncion]
+    registro: peso
+    unilateral: false
+    nivel: principiante
+    principal: false
+    video: null
+    claves:
+      - Cadera pegada al asiento
+      - Subir y bajar controlado
+    alternativas: [peso-muerto-rumano-mancuernas]
+
+  - id: cinta
+    nombre: Cinta de correr
+    alias: [treadmill]
+    patron: cardio
+    musculos: []
+    material: [cinta]
+    registro: tiempo
+    unilateral: false
+    nivel: principiante
+    principal: false
+    video: null
+    claves:
+      - Caminar en pendiente o trotar a un ritmo en el que se pueda hablar
+    alternativas: [remo-ergometro]
+
+  - id: remo-ergometro
+    nombre: Remo (máquina de cardio)
+    alias: [rowing machine]
+    patron: cardio
+    musculos: [dorsal, piernas]
+    material: [remo]
+    registro: tiempo
+    unilateral: false
+    nivel: principiante
+    principal: false
+    video: null
+    claves:
+      - Piernas, luego espalda y por último brazos; al volver, al revés
+      - La resistencia se sube para que cueste más
+    alternativas: [cinta]

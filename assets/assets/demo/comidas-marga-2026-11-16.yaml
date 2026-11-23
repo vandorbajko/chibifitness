@@ -1,0 +1,36 @@
+formato: 1
+id: comidas-marga-2026-11-16
+persona: marga
+inicio: 2026-11-16
+resumen: >
+  Ligero déficit para perder grasa sin perder fuerza. Ayuno de 16 h
+  saltando el desayuno, y proteína alta para acompañar el entreno.
+
+objetivos_diarios:               # orientativos; para menores, kcal siempre null
+  kcal: 1800
+  proteina_g: 115
+  agua_l: 2
+
+comidas:
+  - id: desayuno
+    ayuno: true                  # marcarla como "ayuno" cuenta como cumplida
+  - id: comida
+    hora: "13:30"
+    pauta: Medio plato de verdura, un cuarto de proteína y un cuarto de hidratos integrales
+    ejemplos:
+      - Lentejas estofadas con verduras y un huevo duro
+      - Pollo a la plancha con quinoa y ensalada
+      - Garbanzos salteados con espinacas y atún
+  - id: cena
+    hora: "20:00"
+    pauta: Proteína y verdura; hidratos solo los días de entreno
+    ejemplos:
+      - Tortilla de calabacín con ensalada de tomate
+      - Merluza al horno con verduras asadas
+
+picoteo:
+  pauta: Si hay hambre entre horas, fruta, yogur natural o un puñado de frutos secos
+reglas:
+  - Proteína en todas las comidas
+  - Agua o infusiones; refrescos solo el fin de semana
+  - Fuera de casa vale cualquier plato que respete la pauta

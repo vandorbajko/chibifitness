@@ -1,0 +1,37 @@
+formato: 1
+id: marga                        # coincide con el nombre de la carpeta
+nombre: Marga
+nacimiento: 1985-03-02         # de aquí sale la edad y si es menor
+sexo: mujer                    # mujer | hombre (lo necesitan las fórmulas de TMB y % de grasa)
+altura_cm: 168
+
+objetivo: perder-grasa         # perder-grasa | ganar-musculo | mantener | habitos
+peso_objetivo_kg: 65           # opcional; solo tiene sentido con perder-grasa o ganar-musculo
+actividad: moderada            # sedentaria | ligera | moderada | alta | muy-alta (factor del gasto total)
+
+fuerza:
+  experiencia: principiante    # principiante | intermedio | avanzado
+  material: [mancuernas, kettlebell, banco, barra-dominadas, barra, landmine, press-banca, multifuncion, remo, cinta]
+  lesiones:
+    - zona: rodilla-derecha
+      descripcion: Molestia al bajar escaleras; evitar impacto
+      desde: 2026-09-01
+
+comida:
+  ayuno: { activo: true, ventana: "12:00-20:00" }
+  evitar: [marisco]            # alergias, intolerancias o lo que no gusta
+  preferencias: Cocina sencilla, poco tiempo entre semana
+
+medidas:
+  registrar_cintura: true
+  bioimpedancia: false         # true si tiene báscula que da % de grasa
+
+recordatorios:                 # null o ausente = sin recordatorio
+  peso: "07:30"
+  entreno: "18:00"
+  comidas: "21:30"
+  cintura: { dia: domingo, hora: "09:00" }
+
+insignias:                     # las añade la app; nunca se borran
+  - id: primera-semana
+    fecha: 2026-11-22

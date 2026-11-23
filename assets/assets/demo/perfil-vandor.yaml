@@ -1,0 +1,18 @@
+formato: 1
+id: vandor
+nombre: Vandor
+# Datos de ejemplo para la demostración: el perfil real se crea en la app.
+nacimiento: 1985-01-01
+sexo: hombre
+altura_cm: 178
+objetivo: ganar-musculo
+actividad: moderada
+fuerza:
+  experiencia: principiante
+  material: [mancuernas, kettlebell, banco, barra-dominadas, press-banca, multifuncion, remo, cinta]
+  lesiones: []
+comida:
+  ayuno: { activo: false }
+  evitar: []
+medidas:
+  registrar_cintura: true

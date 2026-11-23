@@ -1,0 +1,70 @@
+formato: 1
+id: fuerza-marga-2026-11-16
+persona: marga
+nombre: Fuerza base, 3 días
+inicio: 2026-11-16
+semanas: 6                       # al acabar, la app propone pedir revisión
+resumen: >
+  Cuerpo completo en dos sesiones alternas. Sin impacto en la rodilla derecha.
+  Cargas de partida conservadoras para aprender la técnica.
+
+dias: [lunes, miercoles, viernes]
+rotacion: [A, B]                 # lunes A, miércoles B, viernes A, lunes B…
+
+progresion:
+  tipo: doble                    # doble | ninguna
+  incremento_kg: 2
+
+sesiones:
+  - id: A
+    nombre: Pierna y empuje
+    calentamiento: 5 min de bici suave y 10 sentadillas sin peso
+    ejercicios:
+      - ejercicio: sentadilla-goblet
+        series: 3
+        reps: [8, 12]
+        carga_kg: 14
+        descanso_s: 90
+        rpe: 7
+      - ejercicio: press-banca-mancuernas
+        series: 3
+        reps: [8, 12]
+        carga_kg: 10
+        descanso_s: 90
+        rpe: 7
+      - ejercicio: plancha
+        series: 3
+        duracion_s: 30
+        descanso_s: 45
+
+  - id: B
+    nombre: Bisagra y tirón
+    calentamiento: 5 min de bici suave y movilidad de cadera
+    ejercicios:
+      - ejercicio: peso-muerto-rumano-mancuernas
+        series: 3
+        reps: [10, 12]
+        carga_kg: 12
+        descanso_s: 90
+        rpe: 7
+      - ejercicio: remo-mancuerna
+        series: 3
+        reps: [10, 12]
+        carga_kg: 10
+        descanso_s: 60
+        superserie: s1
+      - ejercicio: press-landmine
+        series: 3
+        reps: [10, 12]
+        carga_kg: 5
+        descanso_s: 60
+        superserie: s1
+        nota: Ejercicio nuevo; empieza con poco peso
+
+ejercicios_nuevos:
+  - id: press-landmine
+    nombre: Press landmine
+    patron: empuje-vertical
+    registro: peso
+    material: [barra, landmine]
+    motivo: Empuje vertical que carga menos el hombro que el press militar
